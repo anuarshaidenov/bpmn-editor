@@ -1,0 +1,77 @@
+#toolbar{
+  height: 500px;
+  width: 100px;
+  border: solid;
+  position: absolute;
+}
+.element {
+  cursor: grab;
+  box-shadow: 2px -1px 5px -1px rgba(0,0,0,0.75);
+}
+
+.item{
+  background-color: white;
+}
+    .circle{
+      border: 2px solid;
+      border-radius: 50%;
+      margin:10px;
+    }
+            .selected{
+              box-shadow: 0 3px 4px 0 #DBEDF3;
+              border-color: #eeac99 !important;
+            }
+
+
+            .start-event{
+              height: 45px;
+              width: 45px;
+            }
+            .end-event{
+              height: 40px;
+              width: 40px;
+              border: 5px solid;
+            }
+            .intermediate{
+              height: 40px;
+              width: 40px;
+              border: 5px double;
+            }
+    .task{
+      border: 2px solid;
+      border-radius: 25px;
+      width: 90px;
+      height: 70px;
+    }
+
+#diagram-container{
+  border: 1px solid;
+  height: 1000px;
+}
+
+#detail{
+  border: 1px solid;
+  width: 10px;
+  height: 10px;
+  cursor: pointer;
+  margin-left: 70px;
+}
+#detail:hover{
+  border: 3px solid;
+}
+        .delete{
+          margin-left: 120%;
+          margin-bottom: 8px;
+          background-color: red;
+        }
+        .arrow{
+          margin-top: auto;
+          margin-left: 120%;
+          background-color: black;
+        }
+
+        .change-text{
+          margin-top: 8px;
+          margin-left: 120%;
+          background-color: yellow;
+        }

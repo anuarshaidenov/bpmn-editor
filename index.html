@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>BPMN Editor</title>
+    <link rel="stylesheet" href="styles\styles.css">
+  </head>
+  <body>
+    <div id="diagram-container">
+      <div id="toolbar">
+          <div class="element circle start-event" draggable="true"></div>
+          <div class="element circle end-event" draggable="true"></div>
+          <div class="element circle intermediate" draggable="true"></div>
+          <div class="element task" draggable="true"></div>
+      </div>
+        <svg height="100%" width="100%"></svg>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script
+      src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+      integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+      crossorigin="anonymous"></script>
+    <script src="drag-drop.js" charset="utf-8"></script>
+    <script src="draw.js" charset="utf-8"></script>
+  </body>
+</html>
