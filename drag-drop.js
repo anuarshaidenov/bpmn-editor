@@ -38,6 +38,12 @@ function drawLine(){
 //add a comment
 function addAComment(){
   console.log("comment");
+  var commentInput = "<input type='text' placeholder='text'><button type='button' name='button'>comment</button>";
+
+  var comment = prompt("comment:");
+
+  $(this).parent().parent().append("        " + comment);
+
 }
 
 

@@ -11,6 +11,7 @@
 
 .item{
   background-color: white;
+  cursor: grab;
 }
     .circle{
       border: 2px solid;
