@@ -22,7 +22,16 @@ function getByValue(map, searchValue) {
 function deleteTheElement(){
   console.log("removed");
   if(lines.get($(this)[0]) || getByValue(lines, $(this)[0])){
-    // TODO: remove a corresponding line
+    var pointer, pointee;
+    if(lines.get($(this)[0])){
+      pointer = $(this);
+      pointee = $(lines.get($(this)[0]));
+    }
+    else{
+      pointer = $(getByValue(lines, $(this)[0]));
+      pointee = $(this);
+    }
+    deleteTheLine(pointer, pointee);
   }
   $(this).parent().parent().remove();
 }

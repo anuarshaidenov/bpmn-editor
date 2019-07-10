@@ -1,4 +1,3 @@
-
 function drawLinesBetweenElementsAnimate(from, to){
   deleteTheLine(from, to);
   drawALine(from, to);
@@ -31,10 +30,10 @@ function drawALine(from, to) {
     pointee = from;
   }
   var lineCount = pointee.attr("id");
-  var xFrom = (from.position().left + 20).toString();
-  var yFrom = (from.position().top + 20).toString();
-  var xTo = (to.position().left + 20).toString();
-  var yTo = (to.position().top + 20).toString();
+  var xFrom = (from.position().left + 25).toString();
+  var yFrom = (from.position().top + 25).toString();
+  var xTo = (to.position().left + 25).toString();
+  var yTo = (to.position().top + 25).toString();
 
   var newLine1 = document.createElementNS('http://www.w3.org/2000/svg','line');
   var newLine2 = document.createElementNS('http://www.w3.org/2000/svg','line');
