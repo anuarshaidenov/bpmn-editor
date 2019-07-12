@@ -20,7 +20,6 @@ function getByValue(map, searchValue) {
 //MENU BUTTONS
 //delete button
 function deleteTheElement(){
-  console.log("removed");
   if(lines.get($(this)[0]) || getByValue(lines, $(this)[0])){
     var pointer, pointee;
     if(lines.get($(this)[0])){
@@ -34,6 +33,7 @@ function deleteTheElement(){
     deleteTheLine(pointer, pointee);
   }
   $(this).parent().parent().remove();
+  console.log("removed");
 }
 //draw a line
 function drawLine(){

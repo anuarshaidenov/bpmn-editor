@@ -22,7 +22,7 @@
               box-shadow: 0 3px 4px 0 #DBEDF3;
               border-color: #eeac99 !important;
             }
-            
+
             .start-event{
               height: 45px;
               width: 45px;
@@ -47,7 +47,7 @@
 
 #diagram-container{
   border: 1px solid;
-  height: 1000px;
+  height: 600px;
 }
 
 #detail{
