@@ -111,6 +111,9 @@ function drawALineImport(fromX, fromY, toX, toY){
   var xTo = (toX+25);
   var yTo = (toY+25);
 
+  console.log(xFrom, yFrom);
+  console.log(xTo, yTo);
+
   var newLine1 = document.createElementNS('http://www.w3.org/2000/svg','line');
   var newLine2 = document.createElementNS('http://www.w3.org/2000/svg','line');
   var newLine3 = document.createElementNS('http://www.w3.org/2000/svg','line');
