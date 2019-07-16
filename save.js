@@ -25,9 +25,11 @@ $(".save").on("click", function (){
   console.log(bpmn.elements);
 
   var from, to;
+  var elem = $(lines.keys().next().value);
+  console.log(lines.get(elem));
   for (var j = 0; j < lineQuantity; j++){
-    from = lines.keys().next().value;
-    to = lines.get(from);
+    from = {x: elem.position().left, y: elem.position().top};
+    to = {x: $(lines.get(elem[0])).position().left, to: $(lines.get(elem[0])).position().top};
     bpmn.lines.push({"from": from, "to": to});
   }
 
