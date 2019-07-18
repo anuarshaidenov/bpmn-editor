@@ -39,7 +39,10 @@ $(".import").on("click", function () {
   }
   $(".imported").draggable({
     containment: "parent",
-    grid: [15, 15]
+    grid: [15, 15],
+    snap: true,
+    snapTolerance: 10,
+    drag: drag
   });
   $(".imported").on("click", select);
 

@@ -33,11 +33,9 @@ function deleteTheElement(){
     deleteTheLine(pointer, pointee);
   }
   $(this).parent().parent().remove();
-  console.log("removed");
 }
 //draw a line
 function drawLine(){
-  console.log("draw");
   var from = $(this).parent().parent();
   var id = prompt("id of the element to draw a line to");
   var to = $("#" + id);
@@ -46,9 +44,6 @@ function drawLine(){
 }
 //add a comment
 function addAComment(){
-  console.log("comment");
-  var commentInput = "<input type='text' placeholder='text'><button type='button' name='button'>comment</button>";
-
   var comment = prompt("comment:");
 
   $(this).parent().parent().append("        " + comment);
@@ -78,7 +73,7 @@ function drag(){
 //apply selected class to the item
 function select(){
   console.log("selected");
-  var menu = "<div id='details'><div type='button' id='detail' class='delete'>delete</div><div type='button' id='detail' class='arrow'>arrow</div><div type='button' id='detail' class='change-text'>text</div></div>";
+  const menu = "<div id='details'><div type='button' id='detail' class='delete'>delete</div><div type='button' id='detail' class='arrow'>arrow</div><div type='button' id='detail' class='change-text'>text</div></div>";
   $(this).toggleClass("selected");
   if($(this).hasClass("selected")){
     $(this).append(menu);

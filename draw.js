@@ -1,10 +1,12 @@
+//jshint esversion:6
+
 function drawLinesBetweenElementsAnimate(from, to){
   deleteTheLine(from, to);
   drawALine(from, to);
 }
 
 function deleteTheLine(from, to){
-  var pointer, pointee, id, line;
+  let pointer, pointee;
   if(lines.get(from[0])){
     pointer = from;
     pointee = to;
@@ -13,14 +15,14 @@ function deleteTheLine(from, to){
     pointer = to;
     pointee = from;
   }
-  id = pointee.attr("id");
-  line = $("." + id);
+  const id = pointee.attr("id");
+  const line = $("." + id);
   console.log(line);
   line.remove();
 }
 
 function drawALine(from, to) {
-  var pointer, pointee;
+  let pointer, pointee;
   if(lines.get(from[0])){
     pointer = from;
     pointee = to;
@@ -29,29 +31,29 @@ function drawALine(from, to) {
     pointer = to;
     pointee = from;
   }
-  var lineCount = pointee.attr("id");
-  var xFrom = (from.position().left + 25);
-  var yFrom = (from.position().top + 25);
-  var xTo = (to.position().left + 25);
-  var yTo = (to.position().top + 25);
+  const lineCount = pointee.attr("id");
+  const xFrom = (from.position().left + 25);
+  const yFrom = (from.position().top + 25);
+  const xTo = (to.position().left + 25);
+  const yTo = (to.position().top + 25);
 
-  var newLine1 = document.createElementNS('http://www.w3.org/2000/svg','line');
-  var newLine2 = document.createElementNS('http://www.w3.org/2000/svg','line');
-  var newLine3 = document.createElementNS('http://www.w3.org/2000/svg','line');
+  const newLine1 = document.createElementNS('http://www.w3.org/2000/svg','line');
+  const newLine2 = document.createElementNS('http://www.w3.org/2000/svg','line');
+  const newLine3 = document.createElementNS('http://www.w3.org/2000/svg','line');
   if(xFrom < (xTo - xFrom)){
-    newLine1.setAttribute('class',lineCount.toString());
+    newLine1.setAttribute('class',lineCount);
     newLine1.setAttribute('x1',xFrom);
     newLine1.setAttribute('y1',yFrom);
     newLine1.setAttribute('x2',xTo-xFrom);
     newLine1.setAttribute('y2',yFrom);
 
-    newLine2.setAttribute('class',lineCount.toString());
+    newLine2.setAttribute('class',lineCount);
     newLine2.setAttribute('x1',xTo-xFrom);
     newLine2.setAttribute('y1',yFrom);
     newLine2.setAttribute('x2',xTo-xFrom);
     newLine2.setAttribute('y2',yTo);
 
-    newLine3.setAttribute('class',lineCount.toString());
+    newLine3.setAttribute('class',lineCount);
     newLine3.setAttribute('x1',xTo-xFrom);
     newLine3.setAttribute('y1',yTo);
     newLine3.setAttribute('x2',xTo);
@@ -61,18 +63,22 @@ function drawALine(from, to) {
     newLine2.setAttribute('stroke', 'black');
     newLine3.setAttribute('stroke', 'black');
 
+    newLine1.setAttribute('style', 'stroke-width:2');
+    newLine2.setAttribute('style', 'stroke-width:2');
+    newLine3.setAttribute('style', 'stroke-width:2');
+
     $("svg").append(newLine1);
     $("svg").append(newLine2);
     $("svg").append(newLine3);
   }
   else if(xFrom > (xTo - xFrom)){
-    newLine1.setAttribute('class',lineCount.toString());
+    newLine1.setAttribute('class',lineCount);
     newLine1.setAttribute('x1',xFrom);
     newLine1.setAttribute('y1',yFrom);
     newLine1.setAttribute('x2',xTo);
     newLine1.setAttribute('y2',yFrom);
 
-    newLine2.setAttribute('class',lineCount.toString());
+    newLine2.setAttribute('class',lineCount);
     newLine2.setAttribute('x1',xTo);
     newLine2.setAttribute('y1',yFrom);
     newLine2.setAttribute('x2',xTo);
@@ -80,6 +86,9 @@ function drawALine(from, to) {
 
     newLine1.setAttribute('stroke', 'black');
     newLine2.setAttribute('stroke', 'black');
+
+    newLine1.setAttribute('style', 'stroke-width:2');
+    newLine2.setAttribute('style', 'stroke-width:2');
 
     $("svg").append(newLine1);
     $("svg").append(newLine2);
@@ -89,19 +98,19 @@ function drawALine(from, to) {
     ctx.lineTo(xFrom-xTo, yFrom);
     ctx.lineTo(xFrom-xTo, yTo);
     ctx.lineTo(xTo, yTo);
-    newLine1.setAttribute('class', lineCount.toString());
+    newLine1.setAttribute('class', lineCount);
     newLine1.setAttribute('x1',xFrom);
     newLine1.setAttribute('y1',yFrom);
     newLine1.setAttribute('x2',xFrom-xTo);
     newLine1.setAttribute('y2',yFrom);
 
-    newLine2.setAttribute('class',lineCount.toString());
+    newLine2.setAttribute('class',lineCount);
     newLine2.setAttribute('x1',xFrom-xTo);
     newLine2.setAttribute('y1',yFrom);
     newLine2.setAttribute('x2',xFrom-xTo);
     newLine2.setAttribute('y2',yTo);
 
-    newLine3.setAttribute('class',lineCount.toString());
+    newLine3.setAttribute('class',lineCount);
     newLine3.setAttribute('x1',xFrom-xTo);
     newLine3.setAttribute('y1',yTo);
     newLine3.setAttribute('x2',xTo);
@@ -111,11 +120,15 @@ function drawALine(from, to) {
     newLine2.setAttribute('stroke', 'black');
     newLine3.setAttribute('stroke', 'black');
 
+    newLine1.setAttribute('style', 'stroke-width:2');
+    newLine2.setAttribute('style', 'stroke-width:2');
+    newLine3.setAttribute('style', 'stroke-width:2');
+
     $("svg").append(newLine1);
     $("svg").append(newLine2);
     $("svg").append(newLine3);
   }
-  
+
   $("line").on("click", function (e){
     console.log("clicked");
   });
@@ -124,32 +137,32 @@ function drawALine(from, to) {
 }
 
 function drawALineImport(fromX, fromY, toX, toY){
-  var lineCount = bpmn.lines.length;
-  var xFrom = (fromX+25);
-  var yFrom = (fromY+25);
-  var xTo = (toX+25);
-  var yTo = (toY+25);
+  const  lineCount = bpmn.lines.length;
+  const xFrom = (fromX+25);
+  const yFrom = (fromY+25);
+  const xTo = (toX+25);
+  const yTo = (toY+25);
 
   console.log(xFrom, yFrom);
   console.log(xTo, yTo);
 
-  var newLine1 = document.createElementNS('http://www.w3.org/2000/svg','line');
-  var newLine2 = document.createElementNS('http://www.w3.org/2000/svg','line');
-  var newLine3 = document.createElementNS('http://www.w3.org/2000/svg','line');
+  const newLine1 = document.createElementNS('http://www.w3.org/2000/svg','line');
+  const newLine2 = document.createElementNS('http://www.w3.org/2000/svg','line');
+  const newLine3 = document.createElementNS('http://www.w3.org/2000/svg','line');
   if(xFrom < (xTo - xFrom)){
-    newLine1.setAttribute('class',lineCount.toString());
+    newLine1.setAttribute('class',lineCount);
     newLine1.setAttribute('x1',xFrom);
     newLine1.setAttribute('y1',yFrom);
     newLine1.setAttribute('x2',xTo-xFrom);
     newLine1.setAttribute('y2',yFrom);
 
-    newLine2.setAttribute('class',lineCount.toString());
+    newLine2.setAttribute('class',lineCount);
     newLine2.setAttribute('x1',xTo-xFrom);
     newLine2.setAttribute('y1',yFrom);
     newLine2.setAttribute('x2',xTo-xFrom);
     newLine2.setAttribute('y2',yTo);
 
-    newLine3.setAttribute('class',lineCount.toString());
+    newLine3.setAttribute('class',lineCount);
     newLine3.setAttribute('x1',xTo-xFrom);
     newLine3.setAttribute('y1',yTo);
     newLine3.setAttribute('x2',xTo);
@@ -159,18 +172,22 @@ function drawALineImport(fromX, fromY, toX, toY){
     newLine2.setAttribute('stroke', 'black');
     newLine3.setAttribute('stroke', 'black');
 
+    newLine1.setAttribute('style', 'stroke-width:2');
+    newLine2.setAttribute('style', 'stroke-width:2');
+    newLine3.setAttribute('style', 'stroke-width:2');
+
     $("svg").append(newLine1);
     $("svg").append(newLine2);
     $("svg").append(newLine3);
   }
   else if(xFrom > (xTo - xFrom)){
-    newLine1.setAttribute('class',lineCount.toString());
+    newLine1.setAttribute('class',lineCount);
     newLine1.setAttribute('x1',xFrom);
     newLine1.setAttribute('y1',yFrom);
     newLine1.setAttribute('x2',xTo);
     newLine1.setAttribute('y2',yFrom);
 
-    newLine2.setAttribute('class',lineCount.toString());
+    newLine2.setAttribute('class',lineCount);
     newLine2.setAttribute('x1',xTo);
     newLine2.setAttribute('y1',yFrom);
     newLine2.setAttribute('x2',xTo);
@@ -179,24 +196,27 @@ function drawALineImport(fromX, fromY, toX, toY){
     newLine1.setAttribute('stroke', 'black');
     newLine2.setAttribute('stroke', 'black');
 
+    newLine1.setAttribute('style', 'stroke-width:2');
+    newLine2.setAttribute('style', 'stroke-width:2');
+
     $("svg").append(newLine1);
     $("svg").append(newLine2);
   }
 
   else{
-    newLine1.setAttribute('class', lineCount.toString());
+    newLine1.setAttribute('class', lineCount);
     newLine1.setAttribute('x1',xFrom);
     newLine1.setAttribute('y1',yFrom);
     newLine1.setAttribute('x2',xFrom-xTo);
     newLine1.setAttribute('y2',yFrom);
 
-    newLine2.setAttribute('class',lineCount.toString());
+    newLine2.setAttribute('class',lineCount);
     newLine2.setAttribute('x1',xFrom-xTo);
     newLine2.setAttribute('y1',yFrom);
     newLine2.setAttribute('x2',xFrom-xTo);
     newLine2.setAttribute('y2',yTo);
 
-    newLine3.setAttribute('class',lineCount.toString());
+    newLine3.setAttribute('class',lineCount);
     newLine3.setAttribute('x1',xFrom-xTo);
     newLine3.setAttribute('y1',yTo);
     newLine3.setAttribute('x2',xTo);
@@ -205,6 +225,10 @@ function drawALineImport(fromX, fromY, toX, toY){
     newLine1.setAttribute('stroke', 'black');
     newLine2.setAttribute('stroke', 'black');
     newLine3.setAttribute('stroke', 'black');
+
+    newLine1.setAttribute('style', 'stroke-width:2');
+    newLine2.setAttribute('style', 'stroke-width:2');
+    newLine3.setAttribute('style', 'stroke-width:2');
 
     $("svg").append(newLine1);
     $("svg").append(newLine2);
