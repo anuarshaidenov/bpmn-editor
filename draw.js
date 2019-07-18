@@ -135,6 +135,14 @@ function drawALineImport(fromX, fromY, toX, toY){
     newLine3.setAttribute('y1',yTo);
     newLine3.setAttribute('x2',xTo);
     newLine3.setAttribute('y2',yTo);
+
+    newLine1.setAttribute('stroke', 'black');
+    newLine2.setAttribute('stroke', 'black');
+    newLine3.setAttribute('stroke', 'black');
+
+    $("svg").append(newLine1);
+    $("svg").append(newLine2);
+    $("svg").append(newLine3);
   }
   else if(xFrom > (xTo - xFrom)){
     newLine1.setAttribute('class',lineCount.toString());
@@ -148,6 +156,12 @@ function drawALineImport(fromX, fromY, toX, toY){
     newLine2.setAttribute('y1',yFrom);
     newLine2.setAttribute('x2',xTo);
     newLine2.setAttribute('y2',yTo);
+
+    newLine1.setAttribute('stroke', 'black');
+    newLine2.setAttribute('stroke', 'black');
+
+    $("svg").append(newLine1);
+    $("svg").append(newLine2);
   }
 
   else{
@@ -168,13 +182,13 @@ function drawALineImport(fromX, fromY, toX, toY){
     newLine3.setAttribute('y1',yTo);
     newLine3.setAttribute('x2',xTo);
     newLine3.setAttribute('y2',yTo);
+
+    newLine1.setAttribute('stroke', 'black');
+    newLine2.setAttribute('stroke', 'black');
+    newLine3.setAttribute('stroke', 'black');
+
+    $("svg").append(newLine1);
+    $("svg").append(newLine2);
+    $("svg").append(newLine3);
   }
-
-  newLine1.setAttribute('stroke', 'black');
-  newLine2.setAttribute('stroke', 'black');
-  newLine3.setAttribute('stroke', 'black');
-
-  $("svg").append(newLine1);
-  $("svg").append(newLine2);
-  $("svg").append(newLine3);
 }

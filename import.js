@@ -29,29 +29,19 @@ $(".import").on("click", function () {
     let fromY = bpmn.lines[i].from.y;
     let toX = bpmn.lines[i].to.x;
     let toY = bpmn.lines[i].to.y;
-    let from = {
-      position: {
-        left: fromX,
-        top: fromY
-      }
-    };
-    let to = {
-      position: {
-        left: toX,
-        top: toY
-      }
-    };
-    drawALineImport(from.position.left, from.position.top, to.position.left, to.position.top);
+    drawALineImport(fromX, fromY, toX, toY);
   }
 
   //place elements at the diagram
   for(let i = 0; i < elemetQuantity; i++){
     $("#diagram-container").append(elementsHTML[i]);
+    $($(".imported")[i]).append(elements[i].id);
   }
   $(".imported").draggable({
     containment: "parent",
     grid: [15, 15]
   });
+  $(".imported").on("click", select);
 
   alert("imported");
 
