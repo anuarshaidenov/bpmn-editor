@@ -130,7 +130,9 @@ function drawALine(from, to) {
   }
 
   $("line").on("click", function (e){
-    console.log("clicked");
+    const lineClass = $(this).attr("class");
+    $("." + lineClass).remove();
+    lines.delete($("#" + lineClass-1)[0]);
   });
 
 
@@ -236,6 +238,8 @@ function drawALineImport(fromX, fromY, toX, toY){
   }
 
   $("line").on("click", function (e){
-    console.log("clicked");
+    const lineClass = $(this).attr("class");
+    $("." + lineClass).remove();
+    lines.delete($("#" + lineClass-1)[0]);
   });
 }

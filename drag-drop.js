@@ -52,7 +52,7 @@ function addAComment(){
 
 
 
-//drag event functionality
+//animate the lines while dragging
 function drag(){
   console.log("dragging");
   if(lines.get($(this)[0]) || getByValue(lines, $(this)[0])){
