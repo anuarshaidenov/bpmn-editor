@@ -3,6 +3,7 @@
   width: 100px;
   border: 1px solid;
   position: absolute;
+  border-radius: 15px;
 }
 .element {
   cursor: grab;
