@@ -10,7 +10,6 @@ var bpmn ={
 $(".save").on("click", function (){
   var elementQuantity = $("#diagram-container").children().length;
   var lineQuantity = lines.size;
-  var linesObj = [];
 
 //push the existing elements to the object
   for (var i = 2; i < elementQuantity; i++){
@@ -25,7 +24,8 @@ $(".save").on("click", function (){
 
   var from, to;
   var elem = $(lines.keys().next().value);
-  console.log(lines.get(elem));
+  console.log(elem);
+
   //push the existing lines into the bpmn object
   for (var j = 0; j < lineQuantity; j++){
     from = {x: elem.position().left, y: elem.position().top};
