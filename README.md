@@ -2,7 +2,8 @@
 Bussines Process Model Notation creator and editor.
 This project is a web based application that constructs BPMN diagrams.
 
-# This is how it looks(ugly, i know)
+# This is how it looks
+(ugly, i know)
 ![bpmn](https://i.paste.pics/b92f74674e6adaf1fc12b102037b0424.png)
 
 # Here is the description of each element
