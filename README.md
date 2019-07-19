@@ -10,4 +10,5 @@ This project is a web based application that constructs BPMN diagrams.
 
 # Each element has a menu on it
 Which allow you to remove an element, draw an arrow, append a text to the element
+
 ![bpmn-element](https://i.paste.pics/8fdc2f5270ac23905a19f70f5b012a85.png)
