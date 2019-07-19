@@ -17,4 +17,5 @@ Which allow you to remove an element, draw an arrow, append a text to the elemen
 # Save a file
 On the save button click the file gets saved in JSON object format in such way:
 ![json-bpmn](https://i.paste.pics/6a0489cf4b4786dcb62272ca832010e0.png)
+
 you can aslo check the console to see it
