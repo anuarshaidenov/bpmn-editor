@@ -2,7 +2,6 @@
 
 $(".import").on("click", function () {
   let elements = [];
-  let lines = [];
   let elemetQuantity = bpmn.elements.length;
   let linesQuantity = bpmn.lines.length;
   let elementsHTML = [];
@@ -13,10 +12,6 @@ $(".import").on("click", function () {
   }
   console.log(elements);
 
-  //push lines to the array
-  for(let i = 0; i < linesQuantity; i++){
-    lines.push(bpmn.lines[i]);
-  }
   //set elements as HTML
   for(let i = 0; i < elemetQuantity; i++){
     elementsHTML.push("<div id = " + elements[i].id + " class = ' " + elements[i].className + " imported" + " " + " ' style='position: absolute; left: " + elements[i].position.left.toString() + "px; top: " + elements[i].position.top.toString() +  "px'>"  );
@@ -37,6 +32,7 @@ $(".import").on("click", function () {
     $("#diagram-container").append(elementsHTML[i]);
     $($(".imported")[i]).append(elements[i].id);
   }
+  //make the elements draggable
   $(".imported").draggable({
     containment: "parent",
     grid: [15, 15],
